@@ -1,0 +1,15 @@
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\bin\Debug\net6.0\CRC_CSD-04.exe
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\bin\Debug\net6.0\CRC_CSD-04.deps.json
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\bin\Debug\net6.0\CRC_CSD-04.runtimeconfig.json
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\bin\Debug\net6.0\CRC_CSD-04.dll
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\bin\Debug\net6.0\CRC_CSD-04.pdb
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.csproj.AssemblyReference.cache
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.AssemblyInfoInputs.cache
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.AssemblyInfo.cs
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.csproj.CoreCompileInputs.cache
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.dll
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\refint\CRC_CSD-04.dll
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.pdb
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\CRC_CSD-04.genruntimeconfig.cache
+C:\Users\flofu\Desktop\CRC_CD\CRC_CSD-04\obj\Debug\net6.0\ref\CRC_CSD-04.dll
