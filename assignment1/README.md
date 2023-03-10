@@ -4,7 +4,10 @@
 This project is a simple implementation of the bubble and merge sort algorithms using C#.
 
 ## Getting Started
-To get started, simply download this project and navigate to: ```/bin/Debug/net6.0```
+To get started, simply download this project and open it:
+
+1. Open the terminal and type ```dotnet build```
+2. To run the application, you can either type ```dotnet run``` or navigate to ```\bin\Debug\net6.0``` and follow the instructions below.
 
 ## Usage
 ```powershell
