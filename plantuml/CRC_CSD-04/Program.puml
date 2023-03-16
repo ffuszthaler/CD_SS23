@@ -1,0 +1,20 @@
+@startuml
+class Node {
+    + Node(d:int)
+    + Data : int <<get>> <<set>>
+    + Next : Node? <<get>> <<set>>
+}
+class SingleLinkedList {
+    + SingleLinkedList()
+    + head : Node? <<get>> <<set>>
+    + InsertFront(newData:int) : void
+    + InsertLast(newData:int) : void
+    + GetLastNode() : Node?
+    + InsertAfter(preNode:Node?, newData:int) : void
+    + FindByKey(data:int) : Node?
+    + DeleteNodeByKey(key:int) : void
+    + PrintList() : void
+}
+class Program {
+}
+@enduml

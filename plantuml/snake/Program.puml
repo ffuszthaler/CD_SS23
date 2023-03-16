@@ -1,0 +1,21 @@
+@startuml
+class Position {
+    + left : int
+    + top : int
+}
+class Snake {
+    + Length : int <<get>> <<set>>
+    + IfOverlapped(currentPos:Position) : bool
+    + SetInitialPosition() : Position
+    + CleanUp() : void
+}
+class Food {
+    + Position : Position? <<get>> <<set>>
+}
+class Program {
+}
+class "List`1"<T> {
+}
+Snake --> "Points<Position>" "List`1"
+Food --> "Rnd" Random
+@enduml
