@@ -1,6 +1,6 @@
 namespace PetLibrary;
 
-public class Dog
+internal class Dog
 {
   public string Name;
 

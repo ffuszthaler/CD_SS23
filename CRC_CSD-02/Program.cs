@@ -1,4 +1,6 @@
-﻿// FLOAT
+﻿using System;
+
+// FLOAT
 Console.WriteLine("Using float:");
 float a = 0.1f;
 float b = 0.2f;
