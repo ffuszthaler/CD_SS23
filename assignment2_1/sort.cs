@@ -155,15 +155,6 @@ class CRC_CD_Assignment2_1
   }
 
   // helper method for printing result
-  static void printArray(int[] arr)
-  {
-    int n = arr.Length;
-    for (int i = 0; i < n; ++i)
-    {
-      Console.Write(arr[i] + " ");
-    }
-  }
-
   private static void PrintList<T>(IEnumerable<T> list)
   {
     foreach (var item in list)

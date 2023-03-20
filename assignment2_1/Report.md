@@ -1,121 +1,39 @@
 # Explanation of my Implementation
 
 # Bubble Sort
-The overall implementation of bubble sort was pretty straight forward as the algorithm itself isn't too complex.
+Because of the way that I implemented the bubble sort algorithm for the previous assignment,
+I wasn't able to transfer a lot of the old code so most of it is new.
 
-The algorithm works by comparing a value with it's neighbor and swapping them if one is less than the other, this will repeat itself until all numbers are correctly organized.
+The overall functionality remains the same as before (if you want a more detailed explanaiton for that, look inside the ```assignment1``` folder for a file called ```Report.md```) but now it can also sort data in the form of strings, floats, ... .
 
-* To program this behavior, one has to continuously loop through all values first:
+To achieve this I used something called Generics and template variables, which are essentially placeholder datatypes for whatever type of data the user chooses when executing the application.
+
+Almost all the logic surround the functionality of the algorithms remains the same, the only big difference is that instead of working with integers, strings or floats, you instead write ```T``` which stands for Template.
+
+* These can look something like this:
 ```csharp
-for (int i = 0; i < n - 1; i++)
+T[] values = [1, 2, 3];
 ```
-
-* Then compare the current value of the loop iteration with its neighbor:
-```csharp
-if (arr[j] > arr[j] + 1)
-```
-
-* and swap their position in the array if necessary, this can be helped by using additional arrays for temporary storage.
-```csharp
-int temp = arr[j];
-
-arr[j] = arr[j + 1];
-arr[j + 1] = temp;
-```
-
-After this the alogrithm is done sorting.
 
 # Merge Sort
-MergeSort works by spliting the given array into two halves (sub arrays) and recursively sorts each sub array before merging them back into one giant, sorted array.
+The same goes for my merge sort implementation which now also uses templates and therefore supports multiple datatypes.
 
-* To implement this one first has to split the given array onto two parts:
-```csharp
-// middle of array
-int midPoint = array.Length / 2;
+Thankfully I was able to reuse most of my old code and only had to make slight adjustments for it to work.
 
-// left "side" of array
-left = new int[midPoint];
+Again for a more detailed explanation on how merge sort works, please look inside the ```assignment1``` folder for a file called ```Report.md```.
 
-// if array is even, both side have the same amount of elements
-if (array.Length % 2 == 0)
-{
-  right = new int[midPoint];
-}
-// if not, right "side" is bigger by one element
-else
-{
-  right = new int[midPoint + 1];
-}
-```
-
-* Afterwards each sub array get sorted, depending on which condition applies to the currently compared values:
-```csharp
-// while either array still has an element
-while (indexLeft < left.Length || indexRight < right.Length)
-{
-  //if both arrays have elements
-  if (indexLeft < left.Length && indexRight < right.Length)
-  {
-    // if item on left array is less than item on right array,
-    // add it to result array
-    if (left[indexLeft] <= right[indexRight])
-    {
-      result[indexResult] = left[indexLeft];
-      indexLeft++;
-      indexResult++;
-    }
-    // else the item in the right array wll be added to the results array
-    else
-    {
-      result[indexResult] = right[indexRight];
-      indexRight++;
-      indexResult++;
-    }
-  }
-  // if only the left array still has elements,
-  // add all its items to the results array
-  else if (indexLeft < left.Length)
-  {
-    result[indexResult] = left[indexLeft];
-    indexLeft++;
-    indexResult++;
-  }
-  // if only the right array still has elements,
-  // add all its items to the results array
-  else if (indexRight < right.Length)
-  {
-    result[indexResult] = right[indexRight];
-    indexRight++;
-    indexResult++;
-  }
-}
-```
-
-* After the sub arrays are sorted, they get merged into one and the result gets returned and the algorithm is done:
-```csharp
-// sort the left array
-left = mergeSort(left);
-
-// sort the right array
-right = mergeSort(right);
-
-// merge the sorted arrays into one
-result = merge(left, right);
-
-return result;
-```
+Same as with bubble sort, you use ```T``` instead of any other more specific type.
 
 # Helper Functions
-These are functions that help with various aspects of the program.
+The helper functions also received an update to works with more than one datatype:
 
-* Help with printing the algorith results:
+* Updated version:
 ```csharp
-static void printArray(int[] arr)
+private static void PrintList<T>(IEnumerable<T> list)
 {
-  int n = arr.Length;
-  for (int i = 0; i < n; ++i)
+  foreach (var item in list)
   {
-    Console.Write(arr[i] + " ");
+    Console.Write(item + " ");
   }
 }
 ```
