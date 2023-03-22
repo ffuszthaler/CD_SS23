@@ -101,115 +101,6 @@ public class HanoiIterative
     Console.WriteLine("Move the disk " + disk + " from " + fromPeg + " to " + toPeg);
   }
 
-  // fuck the vissualization !!!!!
-  // public void printTowers(int numberOfDisks, Stack first, Stack second, Stack third)
-  // {
-  //   // Reset the terminal, in order to animate
-  //   // Console.Clear();
-
-  //   // Calculate  the max size of the line
-  //   int towerWidth = numberOfDisks * 2 + 1;
-
-  //   // int firstArrayAccessCounter = 0, secondArrayAccessCounter = 0, thirdArrayAccessCounter = 0;
-
-  //   for (int i = 0; i < numberOfDisks; i++)
-  //   {
-  //     string line = "|";
-
-  //     // Add the first array
-  //     // If there is no disk in the line, fill it with spaces
-  //     if (first.top < numberOfDisks - i)
-  //     {
-  //       line += new string(' ', towerWidth);
-  //     }
-  //     else
-  //     {
-  //       // Add half of the spaces needed before the disk
-  //       // Disk d = from.Content.ToArray()[firstArrayAccessCounter++];
-
-  //       for (int k = 0; k < (towerWidth - first.array.Length) / 2; k++)
-  //       {
-  //         line += " ";
-  //       }
-  //       // Add the disk
-  //       for (int k = 0; k < first.top; k++)
-  //       {
-  //         line += "*";
-  //       }
-  //       // Add half of the spaces needed after the disk
-  //       for (int k = 0; k < (towerWidth - first.array.Length) / 2; k++)
-  //       {
-  //         line += " ";
-  //       }
-  //     }
-
-  //     line += "|";
-
-  //     // Print the second array
-  //     // If there is no disk in the line, fill it with spaces
-  //     if (second.top < numberOfDisks - i)
-  //     {
-  //       line += new string(' ', towerWidth);
-  //     }
-  //     else
-  //     {
-  //       // Add half of the spaces needed before the disk
-  //       // Disk d = buffer.Content.ToArray()[secondArrayAccessCounter++];
-
-  //       for (int k = 0; k < (towerWidth - second.array.Length) / 2; k++)
-  //       {
-  //         line += " ";
-  //       }
-  //       // Add the disk
-  //       for (int k = 0; k < second.top; k++)
-  //       {
-  //         line += "*";
-  //       }
-  //       // Add half of the spaces needed after the disk
-  //       for (int k = 0; k < (towerWidth - second.array.Length) / 2; k++)
-  //       {
-  //         line += " ";
-  //       }
-  //     }
-
-  //     line += "|";
-
-  //     // Print the third array
-  //     // If there is no disk in the line, fill it with spaces
-  //     if (third.top < numberOfDisks - i)
-  //     {
-  //       line += new string(' ', towerWidth);
-  //     }
-  //     else
-  //     {
-  //       // Add half of the spaces needed before the disk
-  //       // Disk d = to.Content.ToArray()[thirdArrayAccessCounter++];
-
-  //       for (int k = 0; k < (towerWidth - third.array.Length) / 2; k++)
-  //       {
-  //         line += " ";
-  //       }
-  //       // Add the disk
-  //       for (int k = 0; k < third.top; k++)
-  //       {
-  //         line += "*";
-  //       }
-  //       // Add half of the spaces needed after the disk
-  //       for (int k = 0; k < (towerWidth - third.array.Length) / 2; k++)
-  //       {
-  //         line += " ";
-  //       }
-  //     }
-
-  //     line += "|";
-
-  //     // Write the line to the Console
-  //     // Console.WriteLine(line);
-  //   }
-  // }
-
-
-
   // actual tower of hanoi logic
   public void tohIterative(int num_of_disks, Stack firstDisk, Stack secondDisk, Stack thirdDisk)
   {
@@ -240,20 +131,17 @@ public class HanoiIterative
       {
 
         moveDisksBetweenTwoPoles(firstDisk, thirdDisk, left, right);
-        // printTowers(num_of_disks, firstDisk, secondDisk, thirdDisk);
       }
 
       else if (i % 3 == 2)
       {
 
         moveDisksBetweenTwoPoles(firstDisk, secondDisk, left, midddle);
-        // printTowers(num_of_disks, firstDisk, secondDisk, thirdDisk);
       }
 
       else if (i % 3 == 0)
       {
         moveDisksBetweenTwoPoles(secondDisk, thirdDisk, midddle, right);
-        // printTowers(num_of_disks, firstDisk, secondDisk, thirdDisk);
       }
     }
   }

@@ -3,12 +3,13 @@
 # What is the Tower of Hanoi?
 The tower of hanoi is a mathematical puzzle. It consists of three rods and a number of disks of different sizes which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top. We have to obtain the same stack on the third rod.
 
+Rules:
 * Only one disk can be moved at a time.
 * A disk can only be moved if it is the uppermost disk on a tower.
 * No disk is allowed to be placed on top of a smaller disk.
 
 # Iterative Implementation
-The iterative method works by first creating a custom datatype called a ```Stack``` and functions to interact with it, such as adding and removing data from it.
+The iterative method was implemeted by first creating a custom datatype called a ```Stack``` and functions to interact with it, such as adding and removing data from it.
 
 ```csharp
   public class Stack
@@ -165,7 +166,7 @@ The iterative method works by first creating a custom datatype called a ```Stack
 ```
 
 # Recursive Implementation
-The recursive method works by simply looping over the towers for the amount of ```count```, moving around an imaginery disk, but at the same time slowly decreasing ```count``` and only for as long as it is bigger than zero.
+The recursive method works by simply looping over the towers for the amount of ```count``` (imaginery disk) but at the same time slowly decreasing ```count``` and only for as long as it is bigger than zero.
 ```csharp
   if (count > 0)
   {
