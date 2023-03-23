@@ -119,26 +119,29 @@ public class HanoiIterative
       right = midddle;
       midddle = temp;
     }
+
+    // calculate total amount of moves
     totalMoves = (int)(Math.Pow(2, num_of_disks) - 1);
 
     // larger disks will be pushed first
     for (i = num_of_disks; i >= 1; i--)
+    {
       push(firstDisk, i);
+    }
 
     for (i = 1; i <= totalMoves; i++)
     {
+      // movement between first and third pole
       if (i % 3 == 1)
       {
-
         moveDisksBetweenTwoPoles(firstDisk, thirdDisk, left, right);
       }
-
+      // movement between first and second pole
       else if (i % 3 == 2)
       {
-
         moveDisksBetweenTwoPoles(firstDisk, secondDisk, left, midddle);
       }
-
+      // movement between second and third pole
       else if (i % 3 == 0)
       {
         moveDisksBetweenTwoPoles(secondDisk, thirdDisk, midddle, right);
@@ -172,18 +175,17 @@ class CRC_CD_Assignment2_2
     {
       Console.WriteLine("Tower of Hanoi - Iterative - Result:");
 
-      HanoiIterative ob = new HanoiIterative();
+      HanoiIterative iterative = new HanoiIterative();
       HanoiIterative.Stack left;
       HanoiIterative.Stack middle;
       HanoiIterative.Stack right;
 
       // create three stacks
-      left = ob.createStack(count);
-      middle = ob.createStack(count);
-      right = ob.createStack(count);
+      left = iterative.createStack(count);
+      middle = iterative.createStack(count);
+      right = iterative.createStack(count);
 
-      ob.tohIterative(count, left, right, middle);
-      // ob.printTowers(count, left, middle, right);
+      iterative.tohIterative(count, left, right, middle);
     }
     else if (args[0] == "-Recursive")
     {
