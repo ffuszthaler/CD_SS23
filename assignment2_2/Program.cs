@@ -98,7 +98,7 @@ public class HanoiIterative
   // helper function to show disk movement
   public void moveDisk(char fromPeg, char toPeg, int disk)
   {
-    Console.WriteLine("Move the disk " + disk + " from " + fromPeg + " to " + toPeg);
+    Console.WriteLine("Move disk " + disk + " from " + fromPeg + " to " + toPeg);
   }
 
   // actual tower of hanoi logic
@@ -135,18 +135,32 @@ public class HanoiIterative
       if (i % 3 == 1)
       {
         moveDisksBetweenTwoPoles(firstDisk, thirdDisk, left, right);
+        stepVisualization(num_of_disks, firstDisk, secondDisk, thirdDisk);
       }
       // movement between first and second pole
       else if (i % 3 == 2)
       {
         moveDisksBetweenTwoPoles(firstDisk, secondDisk, left, midddle);
+        stepVisualization(num_of_disks, firstDisk, secondDisk, thirdDisk);
       }
       // movement between second and third pole
       else if (i % 3 == 0)
       {
         moveDisksBetweenTwoPoles(secondDisk, thirdDisk, midddle, right);
+        stepVisualization(num_of_disks, firstDisk, secondDisk, thirdDisk);
       }
     }
+  }
+
+  public void stepVisualization(int num_of_disks, Stack firstDisk, Stack secondDisk, Stack thirdDisk)
+  {
+    for (int i = num_of_disks - 1; i > -1; i--)
+    {
+      Console.WriteLine(firstDisk.array[i] + " " + secondDisk.array[i] + " " + thirdDisk.array[i]);
+    }
+
+    // addes nice steps to animation
+    Thread.Sleep(500);
   }
 }
 
@@ -185,7 +199,10 @@ class CRC_CD_Assignment2_2
       middle = iterative.createStack(count);
       right = iterative.createStack(count);
 
+      // Console.WriteLine(left.array[0] + " " + middle.array[0] + " " + right.array[0]);
       iterative.tohIterative(count, left, right, middle);
+      // iterative.stepVisualization(count, left, middle, right);
+
     }
     else if (args[0] == "-Recursive")
     {

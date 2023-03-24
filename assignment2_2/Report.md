@@ -165,6 +165,20 @@ The iterative method was implemeted by first creating a custom datatype called a
 }
 ```
 
+* This is the visualization, as you can see I wasn't able to finish it in time, but it is better than nothing.
+```csharp
+  public void stepVisualization(int num_of_disks, Stack firstDisk, Stack secondDisk, Stack thirdDisk)
+  {
+    for (int i = num_of_disks - 1; i > -1; i--)
+    {
+      Console.WriteLine(firstDisk.array[i] + " " + secondDisk.array[i] + " " + thirdDisk.array[i]);
+    }
+
+    // addes nice steps to animation
+    Thread.Sleep(500);
+  }
+```
+
 # Recursive Implementation
 The recursive method works by simply looping over the towers for the amount of ```count``` (imaginery disk) but at the same time slowly decreasing ```count``` and only for as long as it is bigger than zero.
 ```csharp
