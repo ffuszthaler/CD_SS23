@@ -199,10 +199,7 @@ class CRC_CD_Assignment2_2
       middle = iterative.createStack(count);
       right = iterative.createStack(count);
 
-      // Console.WriteLine(left.array[0] + " " + middle.array[0] + " " + right.array[0]);
       iterative.tohIterative(count, left, right, middle);
-      // iterative.stepVisualization(count, left, middle, right);
-
     }
     else if (args[0] == "-Recursive")
     {
