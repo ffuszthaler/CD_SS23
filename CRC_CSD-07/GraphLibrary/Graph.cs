@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 namespace GraphLibrary;
 
-public class Graph
+public class Graph<T1, T2>
+where T1 : BasicVertexProperty, new()
+where T2 : BasicEdgeProperty, new()
 {
   // fields
-  private LinkedList<Vertex> _vertices;
-  private LinkedList<Edge> _edges;
+  private LinkedList<Vertex<T1>> _vertices;
+  private LinkedList<Edge<T2>> _edges;
 
   // number of vertices & edges
   private uint _nVertices;
@@ -16,8 +18,8 @@ public class Graph
   // constructor
   public Graph()
   {
-    _vertices = new LinkedList<Vertex>();
-    _edges = new LinkedList<Edge>();
+    _vertices = new LinkedList<Vertex<T1>>();
+    _edges = new LinkedList<Edge<T2>>();
     _nVertices = 0;
     _nEdges = 0;
   }
@@ -33,7 +35,7 @@ public class Graph
   // AddVertex
   public uint AddVertex(string name)
   {
-    Vertex v = new Vertex(_nVertices, name);
+    Vertex<T1> v = new Vertex<T1>(_nVertices, name);
     _vertices.AddLast(v);
 
     _nVertices++;
@@ -42,7 +44,7 @@ public class Graph
   }
 
   // HasVertex
-  public Vertex? HasVertex(string name)
+  public Vertex<T1>? HasVertex(string name)
   {
     for (int i = 0; i < _vertices.Count; i++)
     {
@@ -55,7 +57,7 @@ public class Graph
     return null;
   }
 
-  public Vertex? HasVertex(uint id)
+  public Vertex<T1>? HasVertex(uint id)
   {
     for (int i = 0; i < _vertices.Count; i++)
     {
@@ -71,7 +73,7 @@ public class Graph
   // RemoveVertex
   public void RemoveVertex(string name)
   {
-    Vertex? v = HasVertex(name);
+    Vertex<T1>? v = HasVertex(name);
 
     if (v != null)
     {
@@ -112,8 +114,53 @@ public class Graph
 
   // edge
   // AddEdge
+  public void AddEdge(uint sourceId, uint targetId)
+  {
+    Edge<T2>? e = HasEdge(sourceId, targetId);
+    if (e == null)
+    {
+      Vertex<T1>? sourceV = HasVertex(sourceId);
+      Vertex<T1>? targetV = HasVertex(targetId);
+
+      if (sourceV == null || targetV == null)
+      {
+        Console.WriteLine("Source or target vertex could not be found. Please add vertices first!");
+        return;
+      }
+      else
+      {
+        Edge<T2> newE = new Edge<T2>(_nEdges, sourceId, targetId);
+        _edges.AddLast(newE);
+        _nEdges++;
+      }
+    }
+  }
+
   // HasEdge
+  public Edge<T2>? HasEdge(uint sourceId, uint targetId)
+  {
+    for (int i = 0; i < _edges.Count; i++)
+    {
+      if ((_edges.ElementAt(i).Property.SourceId == sourceId) && (_edges.ElementAt(i).Property.TargetId == targetId))
+      {
+        return _edges.ElementAt(i);
+      }
+    }
+
+    return null;
+  }
+
   // RemoveEdge
+  public void RemoveEdge(uint sourceId, uint targetId)
+  {
+    Edge<T2>? e = HasEdge(sourceId, targetId);
+
+    if (e != null)
+    {
+      _edges.Remove(e);
+      _nEdges--;
+    }
+  }
 
   // graph
   public void PrintGraph()

@@ -1,27 +1,27 @@
 namespace GraphLibrary;
 
-public struct VertexProperty
+public abstract class BasicVertexProperty
 {
   // fields
   public uint Id;
-  public string Name;
+  public string Name = "Unknown Name";
 }
 
-public class Vertex
+public class Vertex<T> where T : BasicVertexProperty, new()
 {
   // fields
-  private VertexProperty _property;
+  private T _property;
 
   // constructor
   public Vertex(uint id, string name)
   {
-    _property = new VertexProperty();
+    _property = new T();
     _property.Id = id;
     _property.Name = name;
   }
 
   // getters & setters
-  public VertexProperty Property
+  public T Property
   {
     get { return _property; }
     set { _property = value; }

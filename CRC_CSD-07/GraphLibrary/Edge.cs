@@ -1,6 +1,6 @@
 namespace GraphLibrary;
 
-public struct EdgeProperty
+public abstract class BasicEdgeProperty
 {
   // fields
   public uint Id;
@@ -8,22 +8,22 @@ public struct EdgeProperty
   public uint TargetId;
 }
 
-public class Edge
+public class Edge<T> where T : BasicEdgeProperty, new()
 {
   // fields
-  private EdgeProperty _property;
+  private T _property;
 
   // constructor
   public Edge(uint id, uint source, uint target)
   {
-    _property = new EdgeProperty();
+    _property = new T();
     _property.Id = id;
     _property.SourceId = source;
     _property.TargetId = target;
   }
 
   // getters & setters
-  public EdgeProperty Property
+  public T Property
   {
     get { return _property; }
     set { _property = value; }
