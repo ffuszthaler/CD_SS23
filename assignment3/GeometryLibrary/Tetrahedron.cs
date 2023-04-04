@@ -20,14 +20,11 @@ public class Tetrahedron : Geometry
 
   public static bool operator ==(Tetrahedron t1, Tetrahedron t2)
   {
-    foreach (Vec3 v1 in t1.vertices)
+    for (int i = 0; i <= t1.vertices.Length; i++)
     {
-      foreach (Vec3 v2 in t2.vertices)
+      if (t1.vertices[i].x == t2.vertices[i].x && t1.vertices[i].y == t2.vertices[i].y && t1.vertices[i].z == t2.vertices[i].z)
       {
-        if (v1.x == v2.x && v1.y == v2.y && v1.z == v2.z)
-        {
-          return true;
-        }
+        return true;
       }
     }
     return false;
@@ -35,14 +32,11 @@ public class Tetrahedron : Geometry
 
   public static bool operator !=(Tetrahedron t1, Tetrahedron t2)
   {
-    foreach (Vec3 v1 in t1.vertices)
+    for (int i = 0; i <= t1.vertices.Length; i++)
     {
-      foreach (Vec3 v2 in t2.vertices)
+      if (t1.vertices[i].x != t2.vertices[i].x && t1.vertices[i].y != t2.vertices[i].y && t1.vertices[i].z != t2.vertices[i].z)
       {
-        if (v1.x != v2.x && v1.y != v2.y && v1.z != v2.z)
-        {
-          return true;
-        }
+        return true;
       }
     }
     return false;
