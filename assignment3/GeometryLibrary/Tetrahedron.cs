@@ -5,7 +5,7 @@ public class Tetrahedron : Geometry
   public Vec3[] vertices;
   public Edge[] edges;
 
-  Tetrahedron(Vec3 v1, Vec3 v2, Vec3 v3, Vec3 v4)
+  public Tetrahedron(Vec3 v1, Vec3 v2, Vec3 v3, Vec3 v4)
   {
     vertices = new Vec3[] { v1, v2, v3, v4 };
     edges = new Edge[] {
@@ -60,13 +60,15 @@ public class Tetrahedron : Geometry
 
   public float SurfaceArea()
   {
+    Thread.Sleep(1000);
+
     // get length for each edge and calculate s for heron's formula
     float s = 1.0F / 2.0F * (edges[0].getLength() + edges[1].getLength() + edges[2].getLength());
 
     foreach (Edge e in edges)
     {
       float length = e.getLength();
-      return (float)Convert.ToDouble(Math.Sqrt(s - length));
+      return (float)Convert.ToDouble(Math.Sqrt(Math.Abs(s - length)));
     }
 
     return 0.0F;

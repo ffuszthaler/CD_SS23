@@ -5,7 +5,7 @@ public class Cuboid : Geometry
   public Vec3[] vertices;
   public Edge[] edges;
 
-  Cuboid(Vec3 v1, Vec3 v2, Vec3 v3, Vec3 v4, Vec3 v5, Vec3 v6, Vec3 v7, Vec3 v8)
+  public Cuboid(Vec3 v1, Vec3 v2, Vec3 v3, Vec3 v4, Vec3 v5, Vec3 v6, Vec3 v7, Vec3 v8)
   {
     vertices = new Vec3[] { v1, v2, v3, v4, v5, v6, v7, v8 };
     edges = new Edge[] {
@@ -71,6 +71,8 @@ public class Cuboid : Geometry
 
   public float SurfaceArea()
   {
+    Thread.Sleep(1000);
+
     // length (l), width (w), and height (h): surface area (SA) = 2*(l*w + l*h + h*w)
     return 2 * (edges[0].getLength() * edges[1].getLength() + edges[0].getLength() * edges[1].getLength() + edges[0].getLength() * edges[1].getLength());
   }

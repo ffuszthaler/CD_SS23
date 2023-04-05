@@ -6,7 +6,7 @@ public class Cylinder : Geometry
   public Edge[] edges;
   public float r;
 
-  Cylinder(Vec3 v1, Vec3 v2, float radius)
+  public Cylinder(Vec3 v1, Vec3 v2, float radius)
   {
     vertices = new Vec3[] { v1, v2 };
     edges = new Edge[] {
@@ -61,6 +61,8 @@ public class Cylinder : Geometry
 
   public float SurfaceArea()
   {
+    Thread.Sleep(1000);
+
     return 2 * (float)Math.PI * r * Height() + 2 * (float)Math.PI * (float)Math.Pow(2, Convert.ToDouble(r));
   }
 
