@@ -1,0 +1,13 @@
+@startuml
+class "Graph`2"<T1,T2> {
+    + Graph()
+    + AddVertex(name:string) : uint
+    + HasVertex(name:string) : Vertex<T1>?
+    + HasVertex(id:uint) : Vertex<T1>?
+    + RemoveVertex(name:string) : void
+    + AddEdge(sourceId:uint, targetId:uint) : void
+    + HasEdge(sourceId:uint, targetId:uint) : Edge<T2>?
+    + RemoveEdge(sourceId:uint, targetId:uint) : void
+    + PrintGraph() : void
+}
+@enduml

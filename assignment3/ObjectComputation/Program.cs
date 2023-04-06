@@ -6,24 +6,26 @@ namespace Assignment3
 {
   class Program
   {
-    // lists of shapes
+    // initialization of the lists for the shapes
     static List<Tetrahedron> tets = new List<Tetrahedron>();
     static List<Cuboid> cubes = new List<Cuboid>();
     static List<Cylinder> cyls = new List<Cylinder>();
 
     static void Main(string[] args)
     {
-
+      // settings for object amount & randomness factor
       int ObjectCount = 5;
       float randFactor = 1.0F;
-      // ================================================== //
 
+      // begin timer1
       var timer1 = new Stopwatch();
       timer1.Start();
+      // ================================================== //
 
-      // Tetrahedrons
+      // tetrahedron
       Random randTet = new Random();
 
+      // get a random value for each coordinate
       for (int i = 0; i < ObjectCount; i++)
       {
         float[] randVal = new float[12];
@@ -32,6 +34,7 @@ namespace Assignment3
           randVal[j] = randFactor * (float)randTet.NextDouble();
         }
 
+        // add them to their list
         tets.Add(
           new Tetrahedron(
             new Vec3(randVal[0], randVal[1], randVal[2]),
@@ -50,13 +53,14 @@ namespace Assignment3
       Console.WriteLine("---");
       // ================================================== //
 
-      // Cuboid
+      // cuboid
       Random randCube = new Random();
 
       for (int i = 0; i < ObjectCount; i++)
       {
         float[] randVal = new float[8];
 
+        // get random values
         float randValX = randFactor * (float)randCube.NextDouble();
         float randValY = randFactor * (float)randCube.NextDouble();
         float randValZ = randFactor * (float)randCube.NextDouble();
@@ -65,6 +69,7 @@ namespace Assignment3
         float cubeWidth = (float)randCube.NextDouble();
         float cubeHeight = (float)randCube.NextDouble();
 
+        // add them to their list
         cubes.Add(
           new Cuboid(
             new Vec3(randValX, randValY, randValZ),
@@ -87,18 +92,21 @@ namespace Assignment3
       Console.WriteLine("---");
       // ================================================== //
 
-      // Cylinder
+      // cylinder
       Random randCyl = new Random();
 
       for (int i = 0; i < ObjectCount; i++)
       {
         float[] randVal = new float[6];
+
+        // get random values
         float randRadius = randFactor * (float)randCyl.NextDouble();
         for (int j = 0; j < randVal.Length; j++)
         {
           randVal[j] = randFactor * (float)randTet.NextDouble();
         }
 
+        // add them to their list
         cyls.Add(
           new Cylinder(
             new Vec3(randVal[0], randVal[1], randVal[2]),
@@ -115,10 +123,10 @@ namespace Assignment3
       }
       // ================================================== //
 
-      // stop timer
+      // stop timer1
       timer1.Stop();
 
-      // handle timer result
+      // handle timer1 result
       TimeSpan timeTaken = timer1.Elapsed;
       string timer1Result = "Time taken: " + timeTaken.ToString(@"m\:ss\.fff");
 
@@ -128,12 +136,13 @@ namespace Assignment3
       // ================================================== //
 
 
-      // do same as above but with tasks
+      // do same calculation as above but with tasks
       useTasks();
     }
 
     static object conch = new object();
 
+    // get tetrahedron area
     static void getTetArea()
     {
       lock (conch)
@@ -145,7 +154,7 @@ namespace Assignment3
       }
     }
 
-
+    // get cuboid area
     static void getCuboidArea()
     {
       foreach (Cuboid cube in cubes)
@@ -158,6 +167,7 @@ namespace Assignment3
       }
     }
 
+    // get cylinder area
     static void getCylinderArea()
     {
       foreach (Cylinder cyl in cyls)
@@ -170,9 +180,10 @@ namespace Assignment3
       }
     }
 
+    // handle execution using actions & tasks
     static void useTasks()
     {
-
+      // begin timer2
       var timer2 = new Stopwatch();
       timer2.Start();
 
@@ -188,10 +199,10 @@ namespace Assignment3
       Task[] tasks = { taskTet, taskCuboid, taskCylinder };
       Task.WaitAll(tasks);
 
-      // stop timer
+      // stop timer2
       timer2.Stop();
 
-      // handle timer result
+      // handle timer2 result
       TimeSpan timeTaken = timer2.Elapsed;
       string timer2Result = "Time taken: " + timeTaken.ToString(@"m\:ss\.fff");
 

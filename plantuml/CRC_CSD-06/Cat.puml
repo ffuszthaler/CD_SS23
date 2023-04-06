@@ -1,0 +1,13 @@
+@startuml
+class Cat {
+    + food : object?
+    + CheckFood(input:object) : string
+}
+class "GenericCat`1"<T> {
+    + food : T?
+    + CheckFood(input:T) : string
+}
+class GenericMethodCat {
+    + {static} DoubleMyFood(input:T) : double
+}
+@enduml

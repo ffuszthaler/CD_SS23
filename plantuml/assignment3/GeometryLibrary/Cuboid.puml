@@ -1,0 +1,9 @@
+@startuml
+class Cuboid {
+    + Cuboid(v1:Vec3, v2:Vec3, v3:Vec3, v4:Vec3, v5:Vec3, v6:Vec3, v7:Vec3, v8:Vec3)
+    + Centroid() : Vec3
+    + Volume() : float
+    + SurfaceArea() : float
+}
+Geometry <|-- Cuboid
+@enduml

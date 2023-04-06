@@ -1,0 +1,6 @@
+@startuml
+interface Geometry {
+    + Centroid() : Vec3
+    + SurfaceArea() : float
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Vec3 <<struct>> {
+    + x : float = 0.0F
+    + y : float = 0.0F
+    + z : float = 0.0F
+    + Vec3(xCoords:float, yCoords:float, zCoords:float)
+}
+@enduml

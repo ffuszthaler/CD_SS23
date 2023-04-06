@@ -1,10 +1,12 @@
 namespace GeometryLibrary;
 
+// cuboid inherits from the geometry interface
 public class Cuboid : Geometry
 {
   public Vec3[] vertices;
   public Edge[] edges;
 
+  // constructor
   public Cuboid(Vec3 v1, Vec3 v2, Vec3 v3, Vec3 v4, Vec3 v5, Vec3 v6, Vec3 v7, Vec3 v8)
   {
     vertices = new Vec3[] { v1, v2, v3, v4, v5, v6, v7, v8 };
@@ -24,6 +26,7 @@ public class Cuboid : Geometry
     };
   }
 
+  // overridden comparison operator
   public static bool operator ==(Cuboid c1, Cuboid c2)
   {
     for (int i = 0; i <= c1.vertices.Length; i++)
@@ -48,6 +51,7 @@ public class Cuboid : Geometry
     return false;
   }
 
+  // centroid calculation
   public Vec3 Centroid()
   {
     float x = 0.0F;
@@ -64,13 +68,16 @@ public class Cuboid : Geometry
     return new Vec3(x, y, z);
   }
 
+  // volume calucation
   public float Volume()
   {
     return edges[0].getLength() * edges[1].getLength() * edges[2].getLength();
   }
 
+  // surface area calculation
   public float SurfaceArea()
   {
+    // have the thread wait 1 sec.
     Thread.Sleep(1000);
 
     // length (l), width (w), and height (h): surface area (SA) = 2*(l*w + l*h + h*w)

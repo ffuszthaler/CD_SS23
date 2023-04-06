@@ -1,0 +1,12 @@
+@startuml
+class VertexProperty {
+    + Age : uint
+}
+class EdgeProperty {
+    + distance : float
+}
+class Program {
+}
+BasicVertexProperty <|-- VertexProperty
+BasicEdgeProperty <|-- EdgeProperty
+@enduml

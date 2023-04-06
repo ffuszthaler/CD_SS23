@@ -1,0 +1,8 @@
+@startuml
+class Edge <<struct>> {
+    + Edge(source:Vec3, target:Vec3)
+    + getLength() : float
+}
+Edge --> "sourceV3" Vec3
+Edge --> "targetV3" Vec3
+@enduml

@@ -1,10 +1,12 @@
 namespace GeometryLibrary;
 
+// tetrahedron inherits from the geometry interface
 public class Tetrahedron : Geometry
 {
   public Vec3[] vertices;
   public Edge[] edges;
 
+  // constructor
   public Tetrahedron(Vec3 v1, Vec3 v2, Vec3 v3, Vec3 v4)
   {
     vertices = new Vec3[] { v1, v2, v3, v4 };
@@ -18,6 +20,7 @@ public class Tetrahedron : Geometry
     };
   }
 
+  // overridden comparison operator
   public static bool operator ==(Tetrahedron t1, Tetrahedron t2)
   {
     for (int i = 0; i <= t1.vertices.Length; i++)
@@ -42,6 +45,7 @@ public class Tetrahedron : Geometry
     return false;
   }
 
+  // centroid calculation
   public Vec3 Centroid()
   {
     float x = 0.0F;
@@ -58,8 +62,10 @@ public class Tetrahedron : Geometry
     return new Vec3(x, y, z);
   }
 
+  // surface area calculation using heron's formula
   public float SurfaceArea()
   {
+    // have the thread wait 1 sec.
     Thread.Sleep(1000);
 
     // get length for each edge and calculate s for heron's formula

@@ -1,0 +1,15 @@
+@startuml
+!include .\\GeometryLibrary\Cuboid.puml
+!include .\\GeometryLibrary\Cylinder.puml
+!include .\\GeometryLibrary\Edge.puml
+!include .\\GeometryLibrary\Geometry.puml
+!include .\\GeometryLibrary\Tetrahedron.puml
+!include .\\GeometryLibrary\Vertex.puml
+!include .\\ObjectComputation\Program.puml
+!include .\\GeometryLibrary\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\GeometryLibrary\obj\Debug\net6.0\GeometryLibrary.AssemblyInfo.puml
+!include .\\GeometryLibrary\obj\Debug\net6.0\GeometryLibrary.GlobalUsings.g.puml
+!include .\\ObjectComputation\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\ObjectComputation\obj\Debug\net6.0\ObjectComputation.AssemblyInfo.puml
+!include .\\ObjectComputation\obj\Debug\net6.0\ObjectComputation.GlobalUsings.g.puml
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class CRC_CD_Assignment2_1 {
+    + {static} Main(args:string[]) : void
+}
+@enduml

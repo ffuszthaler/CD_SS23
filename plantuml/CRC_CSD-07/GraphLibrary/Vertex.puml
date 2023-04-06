@@ -1,0 +1,10 @@
+@startuml
+abstract class BasicVertexProperty {
+    + Id : uint
+    + Name : string = "Unknown Name"
+}
+class "Vertex`1"<T> {
+    + Vertex(id:uint, name:string)
+    + Property : T <<get>> <<set>>
+}
+@enduml

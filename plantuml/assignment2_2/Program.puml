@@ -1,0 +1,21 @@
+@startuml
+class HanoiIterative {
+    + createStack(capacity:int) : Stack
+    + push(stack:Stack, item:int) : void
+    + moveDisksBetweenTwoPoles(src:Stack, dest:Stack, s:char, d:char) : void
+    + moveDisk(fromPeg:char, toPeg:char, disk:int) : void
+    + tohIterative(num_of_disks:int, firstDisk:Stack, secondDisk:Stack, thirdDisk:Stack) : void
+    + stepVisualization(num_of_disks:int, firstDisk:Stack, secondDisk:Stack, thirdDisk:Stack) : void
+}
+class HanoiRecursive {
+    + {static} solveTowers(n:int, start:char, end:char, temp:char) : void
+}
+class CRC_CD_Assignment2_2 {
+    + {static} Main(args:string[]) : void
+}
+class Stack {
+    + capacity : int
+    + top : int
+}
+HanoiIterative +-- Stack
+@enduml

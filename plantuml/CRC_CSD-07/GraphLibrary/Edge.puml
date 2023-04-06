@@ -1,0 +1,11 @@
+@startuml
+abstract class BasicEdgeProperty {
+    + Id : uint
+    + SourceId : uint
+    + TargetId : uint
+}
+class "Edge`1"<T> {
+    + Edge(id:uint, source:uint, target:uint)
+    + Property : T <<get>> <<set>>
+}
+@enduml

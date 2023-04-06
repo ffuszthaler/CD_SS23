@@ -4,9 +4,18 @@ class Cat {
     + Cat()
     + Cat(name:string, date:DateTime)
     + WriteToConsole() : void
+    + {static} ProduceKitty(cat1:Cat, cat2:Cat) : Cat
+    + ProduceCatWith(partner:Cat) : Cat
+    + Speed : double <<get>> <<set>>
+    + Distance : int <<get>>
+    + SpeedUp(velocity:double) : double
+    + CompareTo(anotherCat:Cat?) : int
+}
+class "IComparable`1"<T> {
 }
 class "List`1"<T> {
 }
+"IComparable`1" "<Cat>" <|-- Cat
 Cat --> "DateOfBirth" DateTime
 Cat o-> "Children<Cat>" "List`1"
 @enduml

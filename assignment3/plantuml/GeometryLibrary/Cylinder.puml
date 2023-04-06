@@ -1,0 +1,13 @@
+@startuml
+class Cylinder {
+    + r : float
+    + Cylinder(v1:Vec3, v2:Vec3, radius:float)
+    + Height() : float
+    + TopArea() : float
+    + BottomArea() : float
+    + Volume() : float
+    + SurfaceArea() : float
+    + Centroid() : Vec3
+}
+Geometry <|-- Cylinder
+@enduml
