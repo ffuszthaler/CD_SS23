@@ -50,25 +50,6 @@ class FloodFill
     Fill(input, xCoords, yCoords, "@", ".");
   }
 
-  static void Fill(string[,] layout, int x, int y, string new_string, string old_string)
-  {
-    // check if (x, y) is within the layout and the current new_string is not equal to the target new_string
-    if (x < 0 || x >= layout.GetLength(0) || y < 0 || y >= layout.GetLength(1) || layout[x, y] != old_string)
-    {
-      return;
-    }
-
-    // set the current cell to the target new_string
-    layout[x, y] = new_string;
-    Print(layout);
-
-    // fill the neighboring cells recursively
-    Fill(layout, x + 1, y, new_string, old_string);
-    Fill(layout, x - 1, y, new_string, old_string);
-    Fill(layout, x, y + 1, new_string, old_string);
-    Fill(layout, x, y - 1, new_string, old_string);
-  }
-
   static void Print(string[,] layout)
   {
     // wait for half a second and clear console to prepare next animation frame
@@ -100,5 +81,24 @@ class FloodFill
 
     // close access to output file
     text.Close();
+  }
+
+  static void Fill(string[,] layout, int x, int y, string new_string, string old_string)
+  {
+    // check if (x, y) is within the layout and the current new_string is not equal to the target new_string
+    if (x < 0 || x >= layout.GetLength(0) || y < 0 || y >= layout.GetLength(1) || layout[x, y] != old_string)
+    {
+      return;
+    }
+
+    // set the current cell to the target new_string
+    layout[x, y] = new_string;
+    Print(layout);
+
+    // fill the neighboring cells recursively
+    Fill(layout, x + 1, y, new_string, old_string);
+    Fill(layout, x - 1, y, new_string, old_string);
+    Fill(layout, x, y + 1, new_string, old_string);
+    Fill(layout, x, y - 1, new_string, old_string);
   }
 }
