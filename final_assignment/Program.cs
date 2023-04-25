@@ -7,49 +7,6 @@ using static System.Environment;
 
 class FloodFill
 {
-  static void Main(string[] args)
-  {
-    // provide an input file with the layout
-    string inputFile = File.ReadAllText("./input.txt");
-
-    // extract each row into an array
-    string[] rows = inputFile.Split(Environment.NewLine);
-
-    // create an appropriately sized array for the algorithm
-    string[,] input = new string[rows.Length, rows[0].Split(' ').Length];
-
-    // loop through each row and split it by spaces to get each column value
-    for (int i = 0; i < rows.Length; i++)
-    {
-      string[] columns = rows[i].Split(' ');
-
-      // loop through each column and assign its value to the corresponding array element
-      for (int j = 0; j < columns.Length; j++)
-      {
-        // trim any white spaces around the value
-        input[i, j] = columns[j].Trim();
-      }
-    }
-
-    // introduction
-    Console.WriteLine("Welcome to the Flood-Fill Algorithm!");
-    Console.WriteLine("------------------------------------");
-    Console.WriteLine("INPORTANT");
-    Console.WriteLine("To change the layout, modify input.txt");
-    Console.WriteLine("Coordinate values start at 0, not 1!");
-    Console.WriteLine("------------------------------------");
-
-    // require user input for coords
-    Console.Write("Provide an X coordinate: ");
-    int xCoords = Convert.ToInt32(Console.ReadLine());
-
-    Console.Write("Provide an y coordinate: ");
-    int yCoords = Convert.ToInt32(Console.ReadLine());
-
-    // execute algorithm with provided coords
-    Fill(input, xCoords, yCoords, "@", ".");
-  }
-
   static void Print(string[,] layout)
   {
     // wait for half a second and clear console to prepare next animation frame
@@ -101,4 +58,49 @@ class FloodFill
     Fill(layout, x, y + 1, new_string, old_string);
     Fill(layout, x, y - 1, new_string, old_string);
   }
+
+  static void Main(string[] args)
+  {
+    // provide an input file with the layout
+    // (there is a 2nd input file with a different layout)
+    string inputFile = File.ReadAllText("./input.txt");
+
+    // extract each row into an array
+    string[] rows = inputFile.Split(Environment.NewLine);
+
+    // create an appropriately sized array for the algorithm
+    string[,] input = new string[rows.Length, rows[0].Split(' ').Length];
+
+    // loop through each row and split it by spaces to get each column value
+    for (int i = 0; i < rows.Length; i++)
+    {
+      string[] columns = rows[i].Split(' ');
+
+      // loop through each column and assign its value to the corresponding array element
+      for (int j = 0; j < columns.Length; j++)
+      {
+        // trim any white spaces around the value
+        input[i, j] = columns[j].Trim();
+      }
+    }
+
+    // introduction
+    Console.WriteLine("Welcome to the Flood-Fill Algorithm!");
+    Console.WriteLine("------------------------------------");
+    Console.WriteLine("INPORTANT");
+    Console.WriteLine("To change the layout, modify input.txt");
+    Console.WriteLine("Coordinate values start at 0, not 1!");
+    Console.WriteLine("------------------------------------");
+
+    // require user input for coords
+    Console.Write("Provide an X coordinate: ");
+    int xCoords = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Provide an y coordinate: ");
+    int yCoords = Convert.ToInt32(Console.ReadLine());
+
+    // execute algorithm with provided coords
+    Fill(input, xCoords, yCoords, "@", ".");
+  }
+
 }
