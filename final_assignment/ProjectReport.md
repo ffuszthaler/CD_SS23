@@ -25,7 +25,6 @@ The algorithm has found many applications in computer graphics, including image 
 ### Implementation Detail
 
 #### Implementation Logic Explanation:
-(Explain how you implement the idea step by step compactly and clearly.)
 ```
 For my implementation, I divided my code into three functions, the already existing main which contains the entire input file logic and manages any kind of user input, such as the start coordinates of the algorithm.
 
@@ -35,7 +34,6 @@ And lastly the Print function which displays what the algorithm does and renders
 ```
 
 #### Achievements:
-(List down and explain what achievements you are proud of (e.g., features, techniques, etc.) in the project. Please explain in detail.)
 ```
 1. The entire code base is almost less than 100 lines (Without comments it certainly is).
 2. Made up of simple logic, so it isn't difficult to learn how the code / algorithm works.
@@ -45,26 +43,22 @@ And lastly the Print function which displays what the algorithm does and renders
 ### Learned Knowledge from the Project
 
 #### Major Challenges and Solutions:
-(List down and explain the major challenges. Did you solve it? How? Please explain in detail.)
 ```
 1. Taking the content of the text file and correctly transforming it into the data structure that my implementation of the algorithm uses. This was achieved by looping over the contents and correctly copying everything into the correct cell of the 2D string array.
 ```
 
 #### Minor Challenges and Solutions:
-(List down and explain the minor challenges. Did you solve it? How? Please explain in detail.)
 ```
 1. Making it nice to use whithout having to modify the source code if all you wanted was to change the start coordinates. This was done by creating a TUI which helps you in using the application.
 ```
 
 ### Reflections on the Own Project:
-(List down and explain what you could improve and add if you have more time.)
 ```
 1. If I had more time, then I'd probably try to improve the experience of using the application, by allowing the user to have more setting.
 2. Maybe try to visualize the coordinate picking part, similar to putting pins on a map.
 ```
 
 ### Reflections on the Projects learned during the Presentation:
-(List down and explain what you have learned from your colleague’s codes and what you should pay attention to when writing codes next time.)
 ```
-1. Item
+1. Maybe add more example input data for more variation during the presentation and testing/development phase
 ```
